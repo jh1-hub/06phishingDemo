@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# フィッシング詐欺体験・教育用シミュレーター
 
-# Run and deploy your AI Studio app
+このプロジェクトは、ゆうちょ銀行のサイトを模した**フィッシング詐欺の体験・学習用サイト**です。
+ユーザーが実際に情報を入力していく過程で、どのように情報が盗まれ、どこに危険が潜んでいるかをリアルタイムで学ぶことができます。
 
-This contains everything you need to run your app locally.
+## ⚠️ 重要：注意事項
+- **教育目的のみ**: 本サイトは情報セキュリティへの意識を高めるための教育用ツールです。
+- **入力情報の取り扱い**: 入力した情報はブラウザ内（React Context）でのみ保持され、外部のサーバーに保存されたり送信されたりすることはありません。
+- **実情報の入力禁止**: 体験用ですので、**実際のパスワードや個人情報は絶対に入力しないでください**。
+- **悪用厳禁**: 本プログラムを実際の詐欺行為に利用することは法律で禁じられています。
 
-View your app in AI Studio: https://ai.studio/apps/f094f536-ddd0-4d86-863b-6537c6a7a34e
+## 特徴
+1. **罠の入り口**: SMS通知から始まる、リアルな詐欺の導線を再現。
+2. **巧妙な偽装**: 紛らわしいURL（タイポスクワッティング）の再現。
+3. **情報の可視化**: 入力した情報がリアルタイムで「盗まれた情報リスト」に蓄積される様子を可視化。
+4. **リスク解説**: 最終画面で、盗まれた各情報がどのような犯罪に悪用されるかを詳しく解説。
 
-## Run Locally
+## 技術スタック
+- React 19
+- Vite
+- Tailwind CSS (v4)
+- Framer Motion (アニメーション)
+- Lucide React (アイコン)
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## GitHub Pagesへのデプロイ方法
+1. このコマンドでリポジトリをプッシュします。
+2. GitHubリポジトリの `Settings` > `Pages` を開きます。
+3. `Build and deployment` > `Source` を `GitHub Actions` に設定します。
+4. 設定したワークフローにより、自動的にデプロイが開始されます。
