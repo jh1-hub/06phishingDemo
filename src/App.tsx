@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import TopPage from './pages/TopPage';
 import LoginPage from './pages/LoginPage';
 import PersonalInfoPage from './pages/PersonalInfoPage';
@@ -14,7 +14,7 @@ import { PhishingProvider } from './context/PhishingContext';
 export default function App() {
   return (
     <PhishingProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<SmsEntryPage />} />
           <Route path="/home" element={<TopPage />} />
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/verification/security" element={<SecurityPage />} />
           <Route path="/verification/payment" element={<CardInfoPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </PhishingProvider>
   );
 }
