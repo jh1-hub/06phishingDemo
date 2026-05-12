@@ -14,13 +14,13 @@ export default function FakeAddressBar() {
         <span className="text-gray-400">https://</span>
         <span className="text-gray-900 font-medium">jp-bank.japanpost</span>
         <span className="text-red-600 font-bold">-security</span>
-        <span className="text-gray-900 font-medium">.jp/login</span>
+        <span className="text-gray-900 font-medium">.at/login</span>
         
         <div className="ml-auto group relative">
           <Info className="w-4 h-4 text-orange-500 cursor-help" />
           <div className="absolute top-8 right-0 w-64 bg-black text-white text-[10px] p-3 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-[70]">
             <p className="font-bold text-orange-400 mb-1">🔍 フィッシングの兆候！</p>
-            実在のURLは「jp-bank.japanpost.jp」です。ドメイン名の途中にハイフンを混ぜる（-securityなど）のは、典型的な詐欺サイトの手口です。
+            実在のURLは「jp-bank.japanpost.jp」です。ドメインが「.jp」ではなく「.at」（オーストリア）など日本の法律が及びにくい外国のものになっているのは、非常に危険なサインです。
           </div>
         </div>
       </div>

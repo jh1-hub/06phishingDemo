@@ -54,7 +54,7 @@ export default function SmsEntryPage() {
               【ゆうちょ銀行】お客様の口座で異常なログインが検知されました。本人確認を行わない場合、口座が利用停止されます。以下より至急ご確認ください。
             </p>
             <p className="text-[10px] text-blue-600 underline mt-1 truncate">
-              https://jp-bank.japanpost-security.jp/login
+              https://jp-bank.japanpost-security.at/login
             </p>
           </motion.div>
 

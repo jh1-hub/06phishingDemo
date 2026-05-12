@@ -22,7 +22,7 @@ export default function Home() {
   // Analysis of risks based on stolen data
   const getRiskAnalysis = (key: string) => {
     switch (key) {
-      case 'activeTarget': return 'リンクをクリックしただけで、「この連絡先は有効で、詐欺に引っかかりやすい」という目印が攻撃者に付けられました。今後、より巧妙な詐欺の標的リストに入れられます。';
+      case 'activeTarget': return 'リンクをクリックしただけで、「この連絡先は有効」だと攻撃者に知られました。さらに、.at（オーストリア）など日本の法律が及びにくい外国ドメインのサイトへ無警戒にアクセスしたことで、あなたは「騙しやすいターゲット」としてリストアップされました。';
       case 'customerNumber': return '口座へのログインを試みるための第1キーとなります。';
       case 'loginPassword': return 'これを知られると、あなたになりすましてログインが可能になります。';
       case 'fullName': return '身分称称や、さらなるフィッシング攻撃の信憑性を高めるために悪用されます。';
