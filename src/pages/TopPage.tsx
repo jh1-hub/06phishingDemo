@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Lock, Speech, Landmark, UserPlus, Building2, AlertTriangle, ShieldCheck, RefreshCw } from 'lucide-react';
 import Header from '../components/Header';
@@ -8,12 +9,20 @@ import { usePhishing } from '../context/PhishingContext';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Home() {
-  const { isCompleted, resetSimulation, stolenInfo } = usePhishing();
+  const { isCompleted, resetSimulation, stolenInfo, updateStolenInfo } = usePhishing();
   const stolenCount = Object.keys(stolenInfo).length;
+
+  // Track initial hit
+  React.useEffect(() => {
+    if (!stolenInfo.activeTarget) {
+      updateStolenInfo({ activeTarget: '有効なアドレス（アクティブなターゲット）' });
+    }
+  }, []);
 
   // Analysis of risks based on stolen data
   const getRiskAnalysis = (key: string) => {
     switch (key) {
+      case 'activeTarget': return 'リンクをクリックしただけで、「この連絡先は有効で、詐欺に引っかかりやすい」という目印が攻撃者に付けられました。今後、より巧妙な詐欺の標的リストに入れられます。';
       case 'customerNumber': return '口座へのログインを試みるための第1キーとなります。';
       case 'loginPassword': return 'これを知られると、あなたになりすましてログインが可能になります。';
       case 'fullName': return '身分称称や、さらなるフィッシング攻撃の信憑性を高めるために悪用されます。';
@@ -29,6 +38,7 @@ export default function Home() {
   };
 
   const infoLabels: Record<string, string> = {
+    activeTarget: 'ターゲットの有効性',
     customerNumber: 'お客様番号',
     loginPassword: 'ログインパスワード',
     fullName: '氏名',

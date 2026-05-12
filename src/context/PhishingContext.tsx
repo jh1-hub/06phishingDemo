@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface StolenInfo {
+  activeTarget?: string;
   customerNumber?: string;
   loginPassword?: string;
   fullName?: string;
