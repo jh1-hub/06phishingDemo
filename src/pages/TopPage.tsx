@@ -92,7 +92,7 @@ export default function Home() {
             <div className="md:col-span-1 space-y-6">
                <div className="bg-[#222] border border-red-900/30 p-6 rounded-lg shadow-2xl">
                  <p className="text-sm font-bold text-gray-400 mb-1 uppercase tracking-widest">Total Stolen Items</p>
-                 <div className="text-6xl font-black text-red-500">{stolenCount} <span className="text-2xl">/ {Object.keys(infoLabels).length}</span></div>
+                 <div className="text-4xl xs:text-5xl md:text-6xl font-black text-red-500">{stolenCount} <span className="text-xl md:text-2xl">/ {Object.keys(infoLabels).length}</span></div>
                  <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                    短時間の操作で、あなたのデジタルアイデンティティのほぼ全てが攻撃者の手に渡りました。
                  </p>
@@ -121,8 +121,14 @@ export default function Home() {
                     className="group bg-[#1a1a1a] border border-gray-800 p-4 hover:border-red-600 transition-colors"
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs font-black text-red-500 uppercase">{infoLabels[key] || key}</span>
-                      <span className="text-[10px] text-gray-600 font-mono">STATUS: EXFILTRATED</span>
+                       <span className={`text-xs font-black uppercase px-2 py-0.5 rounded ${
+                         ['directId', 'directPassword', 'creditCardNumber'].includes(key) 
+                           ? 'bg-red-900/50 text-red-400 border border-red-500/30' 
+                           : 'bg-orange-900/50 text-orange-400 border border-orange-500/30'
+                       }`}>
+                         {infoLabels[key] || key}
+                       </span>
+                       <span className="text-[10px] text-gray-600 font-mono">STATUS: EXFILTRATED</span>
                     </div>
                     <div className="font-mono text-lg break-all mb-2 text-white">
                       {val}
@@ -211,19 +217,19 @@ export default function Home() {
                 
                 <h2 className="text-3xl font-bold text-[#b58b42] mb-1">29歳以下限定GOLDカード</h2>
                 
-                <h1 className="text-5xl font-black text-[#5c4a2a] my-2 tracking-tighter">d CARD GOLD U</h1>
+                <h1 className="text-3xl sm:text-5xl font-black text-[#5c4a2a] my-2 tracking-tighter">d CARD GOLD U</h1>
                 
-                <div className="bg-[#b58b42] text-white font-bold inline-block px-8 py-2 rounded-full mt-2 mb-8 text-xl shadow-md">
+                <div className="bg-[#b58b42] text-white font-bold inline-block px-4 sm:px-8 py-2 rounded-full mt-2 mb-8 text-lg sm:text-xl shadow-md">
                    ゆうちょ銀行デザイン
                 </div>
 
-                <div className="bg-red-600 text-white p-4 relative text-center shadow-lg mt-4 transform -rotate-1">
+                <div className="bg-red-600 text-white p-3 sm:p-4 relative text-center shadow-lg mt-4 transform -rotate-1">
                    {/* Ribbons */}
-                   <div className="absolute -left-4 top-1/2 -mt-4 w-8 h-8 bg-red-800 transform rotate-45 -z-10"></div>
-                   <div className="absolute -right-4 top-1/2 -mt-4 w-8 h-8 bg-red-800 transform rotate-45 -z-10"></div>
+                   <div className="absolute -left-4 top-1/2 -mt-4 w-8 h-8 bg-red-800 transform rotate-45 -z-10 hidden sm:block"></div>
+                   <div className="absolute -right-4 top-1/2 -mt-4 w-8 h-8 bg-red-800 transform rotate-45 -z-10 hidden sm:block"></div>
                    
-                   <p className="font-bold text-xl mb-1 mt-1">ゆうちょ限定の特典で、さらにおトク！</p>
-                   <p className="text-5xl font-black tracking-tighter shadow-sm text-white">3,000円プレゼント</p>
+                   <p className="font-bold text-lg sm:text-xl mb-1 mt-1">ゆうちょ限定の特典で、さらにおトク！</p>
+                   <p className="text-3xl sm:text-5xl font-black tracking-tighter shadow-sm text-white">3,000円プレゼント</p>
                 </div>
 
                 <p className="text-sm mt-6 text-gray-800 font-medium text-center">
@@ -302,19 +308,19 @@ export default function Home() {
          {/* Important Notices */}
          <div className="border border-red-500 rounded-none p-4 bg-white shadow-sm">
             <ul className="space-y-3 text-red-600 font-bold text-sm md:text-base">
-               <li className="flex items-start gap-2 hover:underline cursor-pointer group">
+               <li onClick={(e) => e.preventDefault()} className="flex items-start gap-2 hover:underline cursor-pointer group">
                  <AlertTriangle className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                  令和8年岩手県大槌町の林野火災に関するお知らせ
                </li>
-               <li className="flex items-start gap-2 hover:underline cursor-pointer group">
+               <li onClick={(e) => e.preventDefault()} className="flex items-start gap-2 hover:underline cursor-pointer group">
                  <AlertTriangle className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                  【お客さま情報の提出等のお願い】窓口・ATMでのご案内や、お客さま情報管理センターからお送りするお手紙等によりお取引目的等の確認をお願いしています
                </li>
-               <li className="flex items-start gap-2 hover:underline cursor-pointer group">
+               <li onClick={(e) => e.preventDefault()} className="flex items-start gap-2 hover:underline cursor-pointer group">
                  <AlertTriangle className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                  在留カード・在留期間の情報更新に関する案内をご覧になられたお客さまへ
                </li>
-               <li className="flex items-start gap-2 hover:underline cursor-pointer group">
+               <li onClick={(e) => e.preventDefault()} className="flex items-start gap-2 hover:underline cursor-pointer group">
                  <AlertTriangle className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                  ！ゆうちょダイレクトを狙った犯罪にご注意ください！
                </li>
@@ -323,10 +329,10 @@ export default function Home() {
          
          {/* Action Buttons */}
          <div className="flex flex-col md:flex-row gap-4 mt-6 mb-12">
-           <button className="flex-1 bg-[#00873C] text-white font-bold py-6 rounded-none hover:bg-green-700 flex justify-center items-center shadow-md text-xl">
+           <button onClick={(e) => e.preventDefault()} className="flex-1 bg-[#00873C] text-white font-bold py-6 rounded-none hover:bg-green-700 flex justify-center items-center shadow-md text-xl cursor-default sm:cursor-pointer">
              <Landmark className="w-8 h-8 mr-4" /> 総合口座開設
            </button>
-           <button className="flex-1 bg-white border-2 border-[#00873C] text-[#00873C] font-bold py-6 rounded-none hover:bg-green-50 flex justify-center items-center shadow-md text-xl">
+           <button onClick={(e) => e.preventDefault()} className="flex-1 bg-white border-2 border-[#00873C] text-[#00873C] font-bold py-6 rounded-none hover:bg-green-50 flex justify-center items-center shadow-md text-xl cursor-default sm:cursor-pointer">
              <Building2 className="w-8 h-8 mr-4" /> 投資信託口座開設
            </button>
          </div>
