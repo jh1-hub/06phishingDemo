@@ -13,7 +13,7 @@ export default function FakeAddressBar() {
         <Lock className="w-3.5 h-3.5 text-green-600 mr-2" />
         <span className="text-gray-400">https://</span>
         <span className="text-gray-900 font-medium">jp-bank.japanpost</span>
-        <span className="text-red-600 font-bold">-security</span>
+        <span className="text-gray-900 font-medium">-security</span>
         <span className="text-gray-900 font-medium">.at/login</span>
         
         <div className="ml-auto group relative">

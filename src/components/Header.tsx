@@ -34,20 +34,20 @@ export default function Header() {
       <div className="text-xs flex justify-between items-center px-4 md:px-8 py-2 border-b">
          <div className="font-medium text-gray-700">金融機関コード：9900</div>
          <div className="flex gap-6 text-green-700 font-medium">
-           <a href="#" className="hover:underline flex items-center"><span className="text-green-500 mr-1">▶</span> よくあるご質問</a>
-           <a href="#" className="hover:underline flex items-center"><span className="text-green-500 mr-1">▶</span> お問い合わせ</a>
-           <a href="#" className="hover:underline flex items-center"><span className="text-green-500 mr-1">▶</span> English TOP</a>
+           <a href="#" onClick={(e) => e.preventDefault()} className="hover:underline flex items-center"><span className="text-green-500 mr-1">▶</span> よくあるご質問</a>
+           <a href="#" onClick={(e) => e.preventDefault()} className="hover:underline flex items-center"><span className="text-green-500 mr-1">▶</span> お問い合わせ</a>
+           <a href="#" onClick={(e) => e.preventDefault()} className="hover:underline flex items-center"><span className="text-green-500 mr-1">▶</span> English TOP</a>
          </div>
       </div>
       
       {/* Main Nav Tabs */}
       <div className="flex text-sm text-green-800 font-bold border-b-2 border-green-700 mt-2 px-2">
-        <div className="bg-[#00873C] text-white px-8 py-2.5 rounded-t-lg ml-2 cursor-pointer transition-colors">個人のお客さま</div>
-        <div className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">法人のお客さま</div>
-        <div className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">IR情報</div>
-        <div className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">企業情報</div>
-        <div className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">採用情報</div>
-        <div className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg flex items-center transition-colors">サステナビリティ <span className="ml-1 text-xs border p-0.5 rounded border-green-800">↗</span></div>
+        <div onClick={(e) => e.preventDefault()} className="bg-[#00873C] text-white px-8 py-2.5 rounded-t-lg ml-2 cursor-pointer transition-colors">個人のお客さま</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">法人のお客さま</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">IR情報</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">企業情報</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">採用情報</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg flex items-center transition-colors">サステナビリティ <span className="ml-1 text-xs border p-0.5 rounded border-green-800">↗</span></div>
       </div>
       
       {/* Sub Nav (Green Bar) */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Lock, Speech, Landmark, UserPlus, Building2, AlertTriangle, ShieldCheck, RefreshCw } from 'lucide-react';
 import Header from '../components/Header';
 import WarningBanner from '../components/WarningBanner';
@@ -9,8 +9,19 @@ import { usePhishing } from '../context/PhishingContext';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Home() {
-  const { isCompleted, resetSimulation, stolenInfo, updateStolenInfo } = usePhishing();
+  const { isCompleted, setCompleted, resetSimulation, stolenInfo, updateStolenInfo } = usePhishing();
+  const [searchParams] = useSearchParams();
   const stolenCount = Object.keys(stolenInfo).length;
+
+  // Handle auto-finish with delay
+  React.useEffect(() => {
+    if (searchParams.get('finish') === 'true' && !isCompleted) {
+      const timer = setTimeout(() => {
+        setCompleted(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchParams, isCompleted, setCompleted]);
 
   // Track initial hit
   React.useEffect(() => {
@@ -81,7 +92,7 @@ export default function Home() {
             <div className="md:col-span-1 space-y-6">
                <div className="bg-[#222] border border-red-900/30 p-6 rounded-lg shadow-2xl">
                  <p className="text-sm font-bold text-gray-400 mb-1 uppercase tracking-widest">Total Stolen Items</p>
-                 <div className="text-6xl font-black text-red-500">{stolenCount} <span className="text-2xl">/ 10</span></div>
+                 <div className="text-6xl font-black text-red-500">{stolenCount} <span className="text-2xl">/ {Object.keys(infoLabels).length}</span></div>
                  <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                    短時間の操作で、あなたのデジタルアイデンティティのほぼ全てが攻撃者の手に渡りました。
                  </p>
@@ -263,19 +274,19 @@ export default function Home() {
             
             {/* Quick Links Grid */}
             <div className="grid grid-cols-2 gap-3 mt-1">
-              <div className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
+              <div onClick={(e) => e.preventDefault()} className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
                 <Landmark className="w-8 h-8 mb-2 text-green-600 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-bold text-center leading-tight">店舗・ATM<br/>検索 <span className="text-[10px] border p-px ml-1">↗</span></span>
               </div>
-              <div className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
+              <div onClick={(e) => e.preventDefault()} className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
                 <UserPlus className="w-8 h-8 mb-2 text-green-600 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-bold text-center leading-tight">予約サービス</span>
               </div>
-              <div className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
+              <div onClick={(e) => e.preventDefault()} className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
                 <Building2 className="w-8 h-8 mb-2 text-green-600 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-bold text-center leading-tight">各種料金・<br/>金利</span>
               </div>
-              <div className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
+              <div onClick={(e) => e.preventDefault()} className="bg-white border-2 border-green-600 p-4 flex flex-col items-center justify-center text-green-800 hover:bg-green-50 cursor-pointer shadow-sm relative group overflow-hidden">
                 <Building2 className="w-8 h-8 mb-2 text-green-600 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-bold text-center leading-tight">他行との送金<br/>店番・口座番号</span>
               </div>

@@ -17,9 +17,8 @@ export default function CardInfoPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     updateStolenInfo({ creditCardNumber, ccExpiry, ccCvv });
-    setCompleted(true);
-    // Simulation complete, redirect home with final warning
-    navigate('/');
+    // Navigate home first, then complete after a delay on the home page
+    navigate('/home?finish=true');
   };
 
   return (

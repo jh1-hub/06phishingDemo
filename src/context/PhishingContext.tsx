@@ -35,6 +35,7 @@ export function PhishingProvider({ children }: { children: ReactNode }) {
   const resetSimulation = () => {
     setStolenInfo({});
     setCompleted(false);
+    window.location.hash = '/'; // Go back to Step 0 (SmsEntryPage)
   };
 
   return (
