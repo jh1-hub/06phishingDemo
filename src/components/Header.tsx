@@ -41,25 +41,25 @@ export default function Header() {
       </div>
       
       {/* Main Nav Tabs */}
-      <div className="flex text-sm text-green-800 font-bold border-b-2 border-green-700 mt-2 px-2">
-        <div onClick={(e) => e.preventDefault()} className="bg-[#00873C] text-white px-8 py-2.5 rounded-t-lg ml-2 cursor-pointer transition-colors">個人のお客さま</div>
-        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">法人のお客さま</div>
-        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">IR情報</div>
-        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">企業情報</div>
-        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors">採用情報</div>
-        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg flex items-center transition-colors">サステナビリティ <span className="ml-1 text-xs border p-0.5 rounded border-green-800">↗</span></div>
+      <div className="flex text-xs sm:text-sm text-green-800 font-bold border-b-2 border-green-700 mt-2 px-2 overflow-x-auto no-scrollbar scroll-smooth whitespace-nowrap">
+        <div onClick={(e) => e.preventDefault()} className="bg-[#00873C] text-white px-4 sm:px-8 py-2.5 rounded-t-lg ml-2 cursor-pointer transition-colors flex-shrink-0">個人のお客さま</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-4 sm:px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors flex-shrink-0">法人のお客さま</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-4 sm:px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors flex-shrink-0">IR情報</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-4 sm:px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors flex-shrink-0">企業情報</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-4 sm:px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg transition-colors flex-shrink-0">採用情報</div>
+        <div onClick={(e) => e.preventDefault()} className="hover:bg-gray-100 px-4 sm:px-8 py-2.5 cursor-pointer border-t border-l border-r border-transparent hover:border-gray-200 rounded-t-lg flex items-center transition-colors flex-shrink-0">サステナビリティ <span className="ml-1 text-xs border p-0.5 rounded border-green-800">↗</span></div>
       </div>
       
       {/* Sub Nav (Green Bar) */}
-      <div className="bg-[#00873C] text-white flex justify-between px-2 md:px-8 py-2 text-sm font-bold text-center">
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">店舗・ATM<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">貯金<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">送金・支払<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">給与・<br/>年金受取り<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">キャッシュレス<br/>サービス<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">資産運用<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group">ローン・貸付け<span className="text-xs opacity-80 mt-0.5">▼</span></div>
-        <div className="flex-1 flex flex-col justify-center items-center py-1 hover:bg-green-700 cursor-pointer transition-colors relative group">アプリの<br/>ご案内<span className="text-xs opacity-80 mt-0.5">▼</span></div>
+      <div className="bg-[#00873C] text-white flex justify-between px-2 md:px-8 py-2 text-[10px] sm:text-sm font-bold text-center overflow-x-auto no-scrollbar whitespace-nowrap">
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">店舗・ATM<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">貯金<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">送金・支払<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">給与・受取り<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">キャッシュレス<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">資産運用<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 border-r border-green-500 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">ローン<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
+        <div className="px-3 sm:flex-1 flex flex-col justify-center items-center py-1 hover:bg-green-700 cursor-pointer transition-colors relative group flex-shrink-0 uppercase">アプリ<span className="text-[10px] opacity-80 mt-0.5">▼</span></div>
       </div>
     </header>
   );
