@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export default function StolenInfoTracker() {
   const { stolenInfo } = usePhishing();
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(window.innerWidth > 768);
 
   const infoKeys = [
     { key: 'activeTarget', label: 'ターゲットの有効性' },
